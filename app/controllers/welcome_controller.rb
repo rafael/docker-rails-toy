@@ -4,7 +4,12 @@ class WelcomeController < ApplicationController
   end
 
   def redis
-    a = $redis_master.get("te")
-    render json: { ok: a }
+    count = $redis_slave.get("counter")
+    render json: { count: count }
+  end
+
+  def redis_incr
+    $redis_master.incr("counter")
+    render json: { ok: 'success' }
   end
 end
