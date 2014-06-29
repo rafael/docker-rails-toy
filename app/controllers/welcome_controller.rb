@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    render json: { ok: 'success', tete: 'success2', ps: 'tete' }
+    render json: { ok: 'success' }
   end
 
   def redis
