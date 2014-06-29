@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    render json: { ok: 'success', version: 2 }
+    render json: { ok: 'success', version: 2, service_host: ENV['SERVICE_HOST'] }
   end
 
   def redis
